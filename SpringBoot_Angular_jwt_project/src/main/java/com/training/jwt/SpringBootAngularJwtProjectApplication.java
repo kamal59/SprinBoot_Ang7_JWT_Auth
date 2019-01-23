@@ -1,5 +1,6 @@
 package com.training.jwt;
 
+import java.util.Date;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.training.jwt.dao.TaskRepository;import com.training.jwt.entities.RoleBO;
+import com.training.jwt.entities.ActivityBO;
+import com.training.jwt.entities.RoleBO;
 import com.training.jwt.entities.Task;
 import com.training.jwt.entities.UserBO;
-import com.training.jwt.services.AccountService;
+import com.training.jwt.repository.ActivityRepository;
+import com.training.jwt.repository.TaskRepository;
+import com.training.jwt.services.admin.account.AccountService;
+import com.training.jwt.services.admin.assoManagement.IActivityManagement;
 
 
 @SpringBootApplication
@@ -20,6 +25,10 @@ public class SpringBootAngularJwtProjectApplication implements CommandLineRunner
 
 	@Autowired
 	TaskRepository repository;
+	
+	@Autowired
+	IActivityManagement activityMgt;
+	
 	@Autowired AccountService accountService;
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootAngularJwtProjectApplication.class, args);
@@ -42,6 +51,15 @@ public class SpringBootAngularJwtProjectApplication implements CommandLineRunner
 		repository.findAll().forEach(t->{
 			System.out.println(t.getTaskName());
 		});
+		
+		System.out.println("--------------------------------------");
+		ActivityBO act = activityMgt.addActivity(new ActivityBO(new Date(), "desc1", "info1"));
+		System.out.println(act.toString());
+		act.setDescription("desc2");
+		act.setInformation("info2");
+		ActivityBO act2 = activityMgt.updateActivity(act);
+		System.out.println(act.toString());
+		
 	}
 	
 	@Bean
