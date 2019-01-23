@@ -1,0 +1,50 @@
+package com.training.jwt.services.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.training.jwt.dao.RoleRepository;
+import com.training.jwt.dao.UserRepository;
+import com.training.jwt.entities.RoleBO;
+import com.training.jwt.entities.UserBO;
+import com.training.jwt.services.admin.account.AccountService;
+@Service
+@Transactional
+public class AccounServiceImpl implements AccountService {
+
+	@Autowired
+	BCryptPasswordEncoder bc;
+	@Autowired
+	UserRepository userDao;
+	@Autowired
+	RoleRepository roleDao;
+	@Override
+	public UserBO saveUser(UserBO user) {
+		String hashPW = bc.encode(user.getPassword()); 
+		user.setPassword(hashPW);
+		return userDao.save(user);
+	}
+
+	@Override
+	public RoleBO saveRole(RoleBO role) {
+		// TODO Auto-generated method stub
+		return roleDao.save(role);
+	}
+
+	@Override
+	public void addUserRole(String userName, String roleName) {
+		RoleBO role = roleDao.findByRoleName(roleName);
+		UserBO user = userDao.findByUsername(userName);
+		user.getRoles().add(role);
+
+	}
+
+	@Override
+	public UserBO findUserByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return userDao.findByUsername(userName);
+	}
+
+}

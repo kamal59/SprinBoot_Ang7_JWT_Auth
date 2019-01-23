@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.training.jwt.entities.UserBO;
-import com.training.jwt.services.AccountService;
+import com.training.jwt.services.admin.account.AccountService;
 
 @RestController
 public class AccountRestController {

@@ -1,0 +1,40 @@
+package com.training.jwt.services.admin.assoManagement.impl;
+
+import java.util.List;
+
+import com.training.jwt.entities.ActivityBO;
+import com.training.jwt.services.admin.assoManagement.IActivityManagement;
+
+public class ActivityManagement implements IActivityManagement {
+
+	@Override
+	public ActivityBO getActivity(String criteria) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ActivityBO addActivity(ActivityBO activity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ActivityBO updateActivity(ActivityBO activity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteActivity(ActivityBO activity) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<ActivityBO> getActivities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

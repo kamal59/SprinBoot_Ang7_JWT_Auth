@@ -1,0 +1,17 @@
+package com.training.jwt.services.admin.assoManagement;
+
+import java.util.List;
+
+import com.training.jwt.entities.ActivityBO;
+
+public interface IActivityManagement {
+	
+	ActivityBO add(ActivityBO activity);
+	
+	ActivityBO update(ActivityBO activity);
+	
+	void deleteActivity(ActivityBO activity);
+	
+	List<ActivityBO> getActivities(); 
+
+}

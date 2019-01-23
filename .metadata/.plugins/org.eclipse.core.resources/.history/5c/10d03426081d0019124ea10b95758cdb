@@ -1,0 +1,69 @@
+package com.training.jwt.services.admin.assoManagement.test;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+import javassist.NotFoundException;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.training.jwt.entities.ActivityBO;
+import com.training.jwt.repository.ActivityRepository;
+import com.training.jwt.services.admin.assoManagement.IActivityManagement;
+import com.training.jwt.services.admin.assoManagement.impl.ActivityManagement;
+
+@RunWith(MockitoJUnitRunner.class)
+public class ActivityManagementTest {
+
+	@InjectMocks 
+	private ActivityManagement service;
+	
+	@Mock
+	private ActivityRepository repository;
+	
+
+
+	@Test
+	public void testaddActivity() {
+		ActivityBO act = new ActivityBO();
+		act.setDescription("desc");
+		act.setInformation("info");
+		act.setStartDate(new Date());
+		when(repository.add(Mockito.any(ActivityBO.class))).thenReturn(act);
+	}
+
+	@Override
+	public ActivityBO updateActivity(ActivityBO activity) {
+		Optional<ActivityBO> activityOptDB = repository.findById(activity.getId());
+		if (activityOptDB.isPresent()){
+			ActivityBO actvityDB = activityOptDB.get();
+			actvityDB.setDescription(activity.getDescription());
+			actvityDB.setInformation(activity.getInformation());
+			actvityDB.setStartDate(activity.getStartDate());
+			return repository.save(actvityDB);
+		}
+		else{
+			return null;
+		}
+	}
+
+	@Override
+	public void deleteActivity(ActivityBO activity) {
+		repository.deleteById(activity.getId());
+
+	}
+
+	@Override
+	public List<ActivityBO> getActivities() {
+		return repository.findAll();
+	}
+
+}

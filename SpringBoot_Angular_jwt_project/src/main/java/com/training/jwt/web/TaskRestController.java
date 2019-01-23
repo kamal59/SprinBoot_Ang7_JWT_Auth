@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.training.jwt.dao.TaskRepository;
 import com.training.jwt.entities.Task;
+import com.training.jwt.repository.TaskRepository;
 
 @RestController
 public class TaskRestController {

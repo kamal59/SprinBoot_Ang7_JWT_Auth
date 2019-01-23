@@ -1,0 +1,30 @@
+package com.training.jwt.entities;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+public class Operation implements Serializable {
+
+	@Id @GeneratedValue
+	private Long id;
+	
+	@Column(name="OPERATION_DATE")
+	private Date operationDate;
+	
+	@Column(name="OPERATION_VALUE")
+	private Long op_value;
+	
+	@Column(name="TYPE")
+	@Enumerated(EnumType.STRING)
+	private TypeEnum type; 
+	
+	private String reason;
+	
+	private String comment;
+}

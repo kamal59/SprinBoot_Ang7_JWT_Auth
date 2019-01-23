@@ -1,0 +1,25 @@
+package com.training.jwt.repository.specification;
+
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import org.springframework.data.jpa.domain.Specification;
+
+import com.training.jwt.entities.MemberBO;
+
+public class MemberSpecification {
+	
+	EntityManager em;
+	CriteriaBuilder cb = em.getCriteriaBuilder();
+    CriteriaQuery<MemberBO> cq = cb.createQuery(MemberBO.class);
+    Root<MemberBO> member = cq.from(MemberBO.class);
+	static Specification<MemberBO> hasFirstName(String firstName) {
+	    return (member, cq, cb) -> cb.equal(member.get("firstName"), firstName);
+	}
+	static Specification<MemberBO> hasLastName(String lastName) {
+	    return (member, cq, cb) -> cb.equal(member.get("lastName"), lastName);
+	}
+
+}

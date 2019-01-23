@@ -1,0 +1,19 @@
+1547844359923	Rename type 'Operation'
+1547844376775	Rename type 'Activity'
+1547850700120	Move compilation unit
+1547851013873	Rename package 'com.training.jwt.services'
+1547851051201	Rename package 'com.training.jwt.services.admin.authentication'
+1547851078771	Rename package 'com.training.jwt.services.impl'
+1547851440954	Copy package
+1547852821943	Rename package 'com.training.jwt.dao'
+1547852970963	Move compilation unit
+1547853122086	Copy package
+1547853131524	Delete element
+1547853151062	Copy package
+1547853253185	Copy package
+1547931225425	Delete element
+1548023552947	Copy package
+1548023596850	Rename package 'com.training.jwt.services.admin.assoManagement.impl'
+1548023660792	Rename type 'ActivityManagement'
+1548023674493	Rename type 'MemberManagement'
+1548023685042	Rename type 'OperationManagement'

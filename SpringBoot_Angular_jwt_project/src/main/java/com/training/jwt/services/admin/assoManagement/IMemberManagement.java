@@ -1,0 +1,16 @@
+package com.training.jwt.services.admin.assoManagement;
+
+import java.util.List;
+
+import com.training.jwt.entities.MemberBO;
+
+public interface IMemberManagement {
+
+	MemberBO addMember(MemberBO member);
+	MemberBO updateMember (MemberBO member);
+	MemberBO getMember (String criteria);
+	void deleteMember (String criteria);
+	List<MemberBO> searchMember(String criteria);
+
+	
+}

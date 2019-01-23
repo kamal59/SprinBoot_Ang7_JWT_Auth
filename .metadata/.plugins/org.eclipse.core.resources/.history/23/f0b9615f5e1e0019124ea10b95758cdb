@@ -1,0 +1,5 @@
+package com.training.jwt.web;
+
+public class ActivityController {
+
+}

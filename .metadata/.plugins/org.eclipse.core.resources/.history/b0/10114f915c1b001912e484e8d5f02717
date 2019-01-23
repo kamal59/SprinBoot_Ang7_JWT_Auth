@@ -1,0 +1,5 @@
+package com.training.jwt.entities;
+
+public enum StatusEnum {
+
+}

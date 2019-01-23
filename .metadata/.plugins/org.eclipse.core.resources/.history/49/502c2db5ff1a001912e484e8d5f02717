@@ -1,0 +1,9 @@
+package com.training.jwt.entities;
+
+import java.io.Serializable;
+
+public class Member implements Serializable {
+	
+	private 
+
+}

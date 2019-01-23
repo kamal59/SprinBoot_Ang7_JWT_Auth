@@ -1,0 +1,79 @@
+package com.training.jwt.entities;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+public class Member implements Serializable {
+	
+	private String civility;
+	
+	private String firstName;
+	
+	private String lastName;
+	
+	private String phone;
+	
+	private String status;
+	
+	private Date createdDate;
+	
+	private List<RoleBO> roles;
+
+	public String getCivility() {
+		return civility;
+	}
+
+	public void setCivility(String civility) {
+		this.civility = civility;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public List<RoleBO> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<RoleBO> roles) {
+		this.roles = roles;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.training.jwt.services.admin.assoManagement;
+
+public interface IOperationManagement {
+
+}

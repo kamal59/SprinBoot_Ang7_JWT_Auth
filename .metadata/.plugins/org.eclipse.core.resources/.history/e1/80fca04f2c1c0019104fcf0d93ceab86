@@ -1,0 +1,5 @@
+ackage com.training.jwt.services.admin.assoManagement.impl;
+
+public interface IMemberManagement {
+
+}
