@@ -9,6 +9,10 @@ import { TasksComponent } from './tasks/tasks.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationService} from '../services/authentication-service';
+import { ActivityComponent } from './activity/activity.component';
+import { ActivityDetailsComponent } from './activity-details/activity-details.component';
+import { ActivityListComponent } from './activity-list/activity-list.component';
+import { CreateActivityComponent } from './create-activity/create-activity.component';
 
 
  
@@ -18,7 +22,7 @@ import { AuthenticationService} from '../services/authentication-service';
     LoginComponent,
     TasksComponent,
     NewTaskComponent, 
-    RegistrationComponent
+    RegistrationComponent, ActivityComponent, ActivityDetailsComponent, ActivityListComponent, CreateActivityComponent
   ],
   imports: [    
     BrowserModule,

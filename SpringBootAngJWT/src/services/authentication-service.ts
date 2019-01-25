@@ -7,9 +7,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 		
 @Injectable()
 export class AuthenticationService{
-		/*private httpOptions = {
-			  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-			};*/
 			private host: string= 'http://localhost:8888';
 			private jwtToken=null;
 	       private roles:Array<any>;
