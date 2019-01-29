@@ -53,11 +53,7 @@ public class SpringBootAngularJwtProjectApplication implements CommandLineRunner
 		});
 		
 		System.out.println("--------------------------------------");
-		ActivityBO act = activityMgt.addActivity(new ActivityBO(new Date(), "desc1", "info1"));
-		System.out.println(act.toString());
-		act.setDescription("desc2");
-		act.setInformation("info2");
-		ActivityBO act2 = activityMgt.updateActivity(act);
+		ActivityBO act = activityMgt.saveActivity(new ActivityBO(new Date(), "desc1", "info1"));
 		System.out.println(act.toString());
 		
 	}

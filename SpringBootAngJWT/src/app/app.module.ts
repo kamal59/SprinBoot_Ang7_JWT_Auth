@@ -9,11 +9,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationService} from '../services/authentication-service';
-import { ActivityComponent } from './activity/activity.component';
-import { ActivityDetailsComponent } from './activity-details/activity-details.component';
-import { ActivityListComponent } from './activity-list/activity-list.component';
-import { CreateActivityComponent } from './create-activity/create-activity.component';
-
+import {ActivityModule} from './activity/activity.module'
 
  
 @NgModule({
@@ -22,15 +18,17 @@ import { CreateActivityComponent } from './create-activity/create-activity.compo
     LoginComponent,
     TasksComponent,
     NewTaskComponent, 
-    RegistrationComponent, ActivityComponent, ActivityDetailsComponent, ActivityListComponent, CreateActivityComponent
+    RegistrationComponent
   ],
   imports: [    
     BrowserModule,
     AppRoutingModule,           
 	FormsModule,                                
-    HttpClientModule 
+    HttpClientModule,
+	ActivityModule
   ],     
-  providers: [],    
-  bootstrap: [AppComponent]             
+  providers: [AuthenticationService],    
+  bootstrap: [AppComponent],
+              
 })
 export class AppModule { }      

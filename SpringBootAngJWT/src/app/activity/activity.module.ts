@@ -6,7 +6,7 @@ import { ActivityRoutingModule } from './activity-routing.module';
 import { CreateActivityComponent } from './create-activity/create-activity.component';
 import { ActivityListComponent } from './activity-list/activity-list.component';
 import { ActivityDetailsComponent } from './activity-details/activity-details.component';
-
+import { AuthenticationService} from '../../services/authentication-service';
 @NgModule({
   declarations: [CreateActivityComponent, ActivityListComponent, ActivityDetailsComponent],
   imports: [
