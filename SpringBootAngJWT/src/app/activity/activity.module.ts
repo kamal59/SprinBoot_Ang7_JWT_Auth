@@ -7,8 +7,9 @@ import { CreateActivityComponent } from './create-activity/create-activity.compo
 import { ActivityListComponent } from './activity-list/activity-list.component';
 import { ActivityDetailsComponent } from './activity-details/activity-details.component';
 import { AuthenticationService} from '../../services/authentication-service';
+import { UpdateActivityComponent } from './update-activity/update-activity.component';
 @NgModule({
-  declarations: [CreateActivityComponent, ActivityListComponent, ActivityDetailsComponent],
+  declarations: [CreateActivityComponent, ActivityListComponent, ActivityDetailsComponent, UpdateActivityComponent],
   imports: [
     CommonModule,
 	FormsModule,

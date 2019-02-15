@@ -1,3 +1,18 @@
-<p>
-  activity-details works!
-</p>
+   
+     <div class="container">
+        <div class="row col-md-6">
+            <div class="panel panel-default" >
+                <div class="panel panel-heading">Activity details</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label">Start date : </label> {{activity.startDate | date}}
+                        <br>
+                        <label class="control-label">Description : </label> {{activity.information}}
+                        <br>
+                        <label class="control-label">Information : </label> {{activity.description}}
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+     <button class="btn btn-default" style="position:fixed;right: 10px" routerLink="/activities">Back</button>

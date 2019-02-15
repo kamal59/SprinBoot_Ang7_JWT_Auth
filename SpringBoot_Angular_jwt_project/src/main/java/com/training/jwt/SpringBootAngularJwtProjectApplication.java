@@ -27,7 +27,7 @@ public class SpringBootAngularJwtProjectApplication implements CommandLineRunner
 	TaskRepository repository;
 	
 	@Autowired
-	IActivityManagement activityMgt;
+	IActivityManagement activityMgt; 
 	
 	@Autowired AccountService accountService;
 	public static void main(String[] args) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import {Activity} from '../activity';
 import{ActivityService} from '../activity.service';
 
@@ -11,7 +12,8 @@ import{ActivityService} from '../activity.service';
 export class ActivityListComponent implements OnInit {
  activities : Activity[];
   constructor(
-  	private service: ActivityService
+		private service: ActivityService,
+		private router:Router
   ) { }
 
   ngOnInit() {		
@@ -23,6 +25,6 @@ export class ActivityListComponent implements OnInit {
 					this.router.navigateByUrl('/login');
 				}
 		  )
-  }
+	}
 
 }

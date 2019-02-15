@@ -29,19 +29,6 @@ public class UserBO {
 	@ManyToMany(fetch=FetchType.EAGER)
 	private List<RoleBO> roles;
 
-	public UserBO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	public UserBO(Long id, String username, String password, List<RoleBO> roles) { 
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.roles = roles;
-	}
-
 	public String getUsername() {
 		return username;
 	}

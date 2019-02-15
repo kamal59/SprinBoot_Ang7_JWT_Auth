@@ -1,3 +1,24 @@
-<p>
-  create-activity works!
-</p>
+<div class="container">
+		<div class="alert alert-danger" *ngIf="mode==0">
+				<strong>You are not authorized to add new Activity</strong>
+		</div>
+		<div class="row col-md-6">
+				<div class="panel panel-default" >
+						<div class="panel panel-heading">New activity</div>
+						<div class="panel-body">
+								<form #f="ngForm" (ngSubmit) = "onSaveActivity(f.value)">
+										<div class="form-group">
+												<label class="control-label">Start date</label>
+                        <input class="form-control" type="date" name="startDate" ngModel="" required>
+                        <label class="control-label">Description</label>
+                        <input class="form-control" type="text" name="description" ngModel="" required>
+                        <label class="control-label">Information</label>
+												<input class="form-control" type="text" name="information" ngModel="" required>
+										</div>
+										<button class="btn btn-danger" type="submit"  [disabled]="!f.valid">Save</button>
+								</form>
+						</div>
+				</div>
+		</div>
+</div>
+

@@ -4,13 +4,23 @@
 		<p></p>
 		<table class="table table-striped">
 				<tr>
-						<th>ID</th><th>Description</th>
+					<th>Description</th>
+					<th>Information</th>
+					<th>Date</th>
+					<th>Actions</th>
 				</tr>
 				<tr *ngFor="let a of activities">
-						<td>{{a.id}}</td>
-						<td>{{a.description}}</td>
+					<td *ngIf(false)>{{a.id}}</td>
+					<td>{{a.description}}</td>
+					<td>{{a.information}}</td>
+					<td>{{a.startDate | date}}</td>
+					<td>
+						<button class=" btn btn-primary" [routerLink]="['viewActivityDetails', a.id]">view</button>
+						<button class=" btn btn-primary" [routerLink]="['updateActivity', a.id]">edit</button>
+					</td>
 				</tr>
 		</table>
+		<button class="btn btn-default" style="position:fixed;right: 10px" routerLink="createActivity">create Activity</button>
 		
 		
 </div>

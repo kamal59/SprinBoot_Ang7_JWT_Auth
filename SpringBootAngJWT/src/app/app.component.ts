@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthenticationService} from '../services/authentication-service';
 import { Router } from '@angular/router';
 
@@ -7,11 +7,18 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'SpringBootAngJWT';
+export class AppComponent implements OnInit{
   
-  constructor (private authService : AuthenticationService, private router:Router){}
-	
+  title = 'SpringBootAngJWT';
+  connectedUser : string;
+  constructor (
+    private authService : AuthenticationService, 
+    private router:Router
+  ){}
+  
+  ngOnInit(): void {
+    this.connectedUser = this.authService.getConnectedUser();
+  }
 	onLogout(){
 			this.authService.logout();
 			this.router.navigateByUrl('/login');

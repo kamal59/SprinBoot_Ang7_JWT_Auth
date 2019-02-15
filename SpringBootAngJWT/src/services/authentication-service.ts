@@ -9,25 +9,27 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthenticationService{
 			private host: string= 'http://localhost:8888';
 			private jwtToken=null;
-	       private roles:Array<any>;
-			
+	        private roles:Array<any>;
+			private connectedUser : string;
 		constructor(
 			private http: HttpClient 
 		
 	){	}
+
+		getConnectedUser(){
+			return this.connectedUser;
+		}
 		saveToken(jwt:string){
 			this.jwtToken = jwt;
 			localStorage.setItem('token', jwt);
 			let jwtHelper = new JwtHelperService();
-			
 			this.roles = jwtHelper.decodeToken(this.jwtToken).roles; 
-
+			this.connectedUser = jwtHelper.decodeToken(this.jwtToken).sub;
 		}
 		loadToken(){
 			this.jwtToken=localStorage.getItem('token');
 		}
 		login(user){
-		
 			return this.http.post(this.host+'/login', user,{observe: 'response'}); 
 		} 
 		logout(){
