@@ -9,7 +9,10 @@ import { TasksComponent } from './tasks/tasks.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthenticationService} from '../services/authentication-service';
-import {ActivityModule} from './activity/activity.module'
+import {ActivityModule} from './activity/activity.module';
+import { HeaderComponent } from './header/header.component';
+import { DashBoardComponent } from './dash-board/dash-board.component'
+import { AdministrationModule } from './administration/administration.module';
 
  
 @NgModule({
@@ -18,14 +21,15 @@ import {ActivityModule} from './activity/activity.module'
     LoginComponent,
     TasksComponent,
     NewTaskComponent, 
-    RegistrationComponent
+    RegistrationComponent, HeaderComponent, DashBoardComponent
   ],
   imports: [    
     BrowserModule,
     AppRoutingModule,           
-	FormsModule,                                
+	  FormsModule,                                
     HttpClientModule,
-	ActivityModule
+    ActivityModule,
+    AdministrationModule
   ],     
   providers: [AuthenticationService],    
   bootstrap: [AppComponent],

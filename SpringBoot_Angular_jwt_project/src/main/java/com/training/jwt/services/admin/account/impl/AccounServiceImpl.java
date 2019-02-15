@@ -1,5 +1,7 @@
 package com.training.jwt.services.admin.account.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -45,6 +47,12 @@ public class AccounServiceImpl implements AccountService {
 	public UserBO findUserByUserName(String userName) {
 		// TODO Auto-generated method stub
 		return userDao.findByUsername(userName);
+	}
+
+	@Override
+	public List<UserBO> getUsersList() {
+		// TODO Auto-generated method stub
+		return userDao.findAll();
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.training.jwt.services.admin.account;
 
+import java.util.List;
+
 import com.training.jwt.entities.RoleBO;
 import com.training.jwt.entities.UserBO;
 
@@ -8,4 +10,5 @@ public interface AccountService {
 	public RoleBO saveRole(RoleBO role);
 	public void addUserRole (String userName, String role);
 	public UserBO findUserByUserName(String userName);
+	public List<UserBO> getUsersList();
 }

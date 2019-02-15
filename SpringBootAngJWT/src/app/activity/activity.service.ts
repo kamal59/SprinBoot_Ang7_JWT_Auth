@@ -13,7 +13,6 @@ private host: string= 'http://localhost:8888/activities';
 private jwtToken=null;
 activity : Activity;
   constructor(
-  		private jwtService : AuthenticationService,
   		private http: HttpClient 
 	) { }
 	

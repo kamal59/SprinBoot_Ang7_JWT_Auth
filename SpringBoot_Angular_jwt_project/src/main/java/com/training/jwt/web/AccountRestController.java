@@ -1,6 +1,9 @@
 package com.training.jwt.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +29,10 @@ public class AccountRestController {
 		service.saveUser(user);
 		service.addUserRole(userForm.getUsername(), "USER");
 		return user;
-		
+	}
+	
+	@GetMapping("/getUsersList")
+	public List<UserBO> getUserList(){
+		return service.getUsersList();
 	}
 }

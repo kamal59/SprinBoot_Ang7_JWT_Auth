@@ -37,8 +37,8 @@ public class SpringBootAngularJwtProjectApplication implements CommandLineRunner
 	
 	@Override
 	public void run(String... args) throws Exception {
-		accountService.saveUser(new UserBO(null,"admin","1234",null));
-		accountService.saveUser(new UserBO(null,"user","1234",null));
+		accountService.saveUser(new UserBO(null,"admin","1234","066666666", "admin@gmail.com","admin","admin", null));
+		accountService.saveUser(new UserBO(null,"user","1234","077777777", "admin@gmail.com", "user", "user", null));
 		accountService.saveRole(new RoleBO(null, "ADMIN"));
 		accountService.saveRole(new RoleBO(null, "USER"));
 		accountService.addUserRole("admin", "ADMIN");

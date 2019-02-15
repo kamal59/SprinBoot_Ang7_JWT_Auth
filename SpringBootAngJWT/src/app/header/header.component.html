@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" routerLinkActive="active">
+        <li class="nav-item" ><a class="btn"  [class.disabled]="!isConnected" routerLink="/tasks" >Tasks</a></li>
+        <li class="nav-item"><a class="btn" [class.disabled]="!isConnected" routerLink="activities">Activities</a></li>
+      </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="!isConnected"><a role="button" (click) = "onLogout()">Sign In</a></li>
+      <li class="dropdown" *ngIf="isConnected">
+        <a  class="dropdown-toggle" role="button" data-toggle="dropdown">{{connectedUser}} <span class="caret"></span></a>
+        <ul class="dropdown-menu" routerLinkActive="active">
+          <li><a role="button" (click) = "onLogout()">Logout</a></li>
+          <li><a role="button" routerLink="/administration">Administration</a></li>
+          <li><a href="#">Profil</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  </nav>

@@ -4,6 +4,7 @@ public class RegisterForm {
 	private String username;
 	private String password;
 	private String confirmedpassword;
+	private String email;
 	public String getUsername() {
 		return username;
 	}
@@ -21,6 +22,12 @@ public class RegisterForm {
 	}
 	public void setConfirmedpassword(String confirmedpassword) {
 		this.confirmedpassword = confirmedpassword;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

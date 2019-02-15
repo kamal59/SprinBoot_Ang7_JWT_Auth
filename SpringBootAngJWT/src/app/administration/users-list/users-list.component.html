@@ -1,0 +1,26 @@
+<div class="container">
+	<p></p>
+
+	<p></p>
+	<table class="table table-striped">
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Email</th>
+				<th>phone number</th>
+			</tr>
+			<tr *ngFor="let u of users">
+				<td *ngIf(false)>{{u.id}}</td>
+				<td>{{u.firstName}}</td>
+				<td>{{u.lastName}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.phoneNumber}}</td>
+				<td>
+					<button class=" btn btn-primary" [routerLink]="['userDetails', u.id]">view</button>
+          <button class=" btn btn-primary" [routerLink]="['editUser', u.id]">edit</button>
+          <button class=" btn btn-alert" (click) = "onDeleteUser(u.id)">delete</button>
+				</td>
+			</tr>
+	</table>
+	<button class="btn btn-default" style="position:fixed;right: 10px" routerLink="createActivity">create Activity</button>
+</div>
