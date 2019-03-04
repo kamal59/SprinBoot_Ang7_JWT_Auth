@@ -11,7 +11,7 @@ const routes: Routes = [
 	{path:"tasks", component:TasksComponent},
 	{path:"new-task", component:NewTaskComponent},
 	{path:"register", component:RegistrationComponent},
-	{path: '', redirectTo:'/login',pathMatch:'full'}
+	{path: ' ', redirectTo:'/login',pathMatch:'full'}
 ];
 
 @NgModule({
